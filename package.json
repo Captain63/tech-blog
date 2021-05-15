@@ -1,0 +1,35 @@
+{
+  "name": "tech-blog",
+  "version": "1.0.0",
+  "description": "CMS for a blog site that allows user to create account to publish, update and delete posts and comments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Captain63/tech-blog.git"
+  },
+  "keywords": [],
+  "author": "Stephen Roddewig (Captain63)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Captain63/tech-blog/issues"
+  },
+  "homepage": "https://github.com/Captain63/tech-blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^9.0.2",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
