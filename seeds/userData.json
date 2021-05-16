@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Captain63",
+        "email": "stephen@test.com",
+        "password": "PasswordTest5"
+    },
+    {
+        "name": "GitMan",
+        "email": "git_man@test.com",
+        "password": "GitErDone"
+    },
+    {
+        "name": "James_Smith",
+        "email": "smith.james@test.com",
+        "password": "*GiveASmith*"
+    }
+]
