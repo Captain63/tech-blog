@@ -1,6 +1,5 @@
 <div class="row px-5 justify-content-center">
     <div class="col-10">
-        <a href="/post/{{id}}" target="_blank" class="post-link">
         <div class="my-3 card shadow-sm rounded" data-post_id="{{id}}">
             <div class="card-header bg-success text-white d-flex justify-content-between">
                 <h2 class="card-title">{{title}}</h2> 
@@ -11,6 +10,23 @@
                 <p>{{text}}</p>
             </div>
         </div>
-        </a>
     </div>
 </div>
+
+<div class="row px-5 justify-content-center mt-2">
+    <div class="col-10">
+        <h3 class="w-100">Comments</h3>
+    </div>
+</div>
+
+{{#each comments as |comment|}}
+{{> comment-summaries}}
+{{/each}}
+
+<div class="row px-5 justify-content-center">
+    <div class="col-10">
+        <button class="btn btn-dark w-50 mt-3" id="new-comment"><h5>+ New Comment</h5></button>
+    </div>
+</div>
+
+{{!-- <script src="/js/post.js"></script> --}}
