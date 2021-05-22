@@ -7,19 +7,25 @@ router.get("/", async (req, res) => {
     try {
         // Get all posts and join with user data
         const postData = await Post.findAll({
-          include: [
-            {
-              model: User,
-              attributes: ['name'],
-            },
-          ],
+            include: [
+                {
+                model: User,
+                attributes: ['name'],
+                },
+            ],
+            order: [
+                ["post_date", "DESC"]
+            ]
         });
     
         // Serialize data so the template can read it
         const posts = postData.map(post => post.get({ plain: true }));
     
         // Pass serialized data and session flag into template
-        res.render('homepage', { posts });
+        res.render('homepage', { 
+            posts,
+            loggedIn: req.session.loggedIn
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -37,6 +43,9 @@ router.get("/post/:id", async (req, res) => {
                 },
                 {
                     model: Comment,
+                    order: [
+                        ["comment_date", "ASC"]
+                    ],
                     include: {
                         model: User,
                         attributes: ['name']
@@ -47,7 +56,10 @@ router.get("/post/:id", async (req, res) => {
 
         const post = postData.get({ plain: true });
 
-        res.render("post", { ...post });
+        res.render("post", { 
+            ...post,
+            loggedIn: req.session.loggedIn
+         });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -60,12 +72,18 @@ router.get("/dashboard", withAuth, async (req, res) => {
             // Retrieve blog posts that match user id for current session
             where: {
                 user_id: req.session.userId
-            }
+            },
+            order: [
+                ["post_date", "DESC"]
+            ]
         })
 
         const posts = postData.map(post => post.get({ plain: true }));
 
-        res.render("dashboard", { posts });
+        res.render("dashboard", { 
+            posts,
+            loggedIn: req.session.loggedIn
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -86,14 +104,15 @@ router.get("/dashboard/new-post", withAuth, (req, res) => {
 // Show blog post updating/deleting page
 router.get("/dashboard/edit/:id", withAuth, async (req, res) => {
     try {
-        const postData = await Post.findOne(req.params.id);
+        const postData = await Post.findByPk(req.params.id);
 
         const post = postData.get({ plain: true });
 
         res.render("write", { 
             ...post,
             // Flag for front-end code to show "Edit" + "Delete" buttons underneath form
-            existingPost: true
+            existingPost: true,
+            loggedIn: req.session.loggedIn
          });
     } catch (err) {
         res.status(500).json(err);
