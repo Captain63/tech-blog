@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Project Overview](#project-overview) 
+- [Live Application](#live-application)
 - [Installation](#installation)
 - [Demo](#demo)
 - [License](#license)
