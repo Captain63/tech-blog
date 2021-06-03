@@ -2,11 +2,9 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.all("*", async (req, res) => {
+router.get(/herokuapp/, async (req, res) => {
     try {
-        if (req.get("host").includes("herokuapp.com")) {
-            res.status(301).redirect("https://stephentechblog.com/");
-        }
+        res.redirect(301, "https://stephentechblog.com/")
     } catch (err) {
         res.status(500).json(err);
     }
