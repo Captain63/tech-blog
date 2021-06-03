@@ -2,14 +2,6 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get(/herokuapp/, async (req, res) => {
-    try {
-        res.redirect(301, "https://stephentechblog.com/")
-    } catch (err) {
-        res.status(500).json(err);
-    }
-})
-
 // Show homepage
 router.get("/", async (req, res) => {
     try {

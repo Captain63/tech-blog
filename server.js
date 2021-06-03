@@ -26,6 +26,8 @@ const sess = {
 
 const hbs = exphbs.create({ helpers });
 
+app.all('*', (req, res) => res.redirect(301,`https://stephentechblog.com${req.path}`));
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
