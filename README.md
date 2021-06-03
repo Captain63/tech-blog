@@ -33,7 +33,7 @@ See [package.json](./package.json) for full list of dependencies.
 - [Font Awesome](https://fontawesome.com/)
 
 ## Live Application
-[View application deployment](https://captain63-tech-blog.herokuapp.com/) in Heroku.
+[View application deployment](https://stephentechblog.com/) in Heroku.
 
 ## Installation
 To run this application on your local machine, Node.js is _required_. Once cloned/downloaded from GitHub, enter ```npm i``` in command line to install the packages referenced under Libraries Used automatically. 
