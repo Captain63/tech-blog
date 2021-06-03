@@ -26,7 +26,12 @@ const sess = {
 
 const hbs = exphbs.create({ helpers });
 
-app.all('*', (req, res) => res.redirect(301,`https://stephentechblog.com${req.path}`));
+app.use(function forceLiveDomain(req, res, next) {
+  if (req.get('Host').includes("herokuapp")) {
+    return res.redirect(301, `https://stephentechblog.com${req.path}`);
+  }
+  return next();
+});
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
