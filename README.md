@@ -1,5 +1,7 @@
 # Steve's Tech Blog
 
+![MIT license badge](./screenshots/mit-license.svg)
+
 ## Table of Contents
 - [Project Overview](#project-overview) 
 - [Live Application](#live-application)
