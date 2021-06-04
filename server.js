@@ -26,8 +26,10 @@ const sess = {
 
 const hbs = exphbs.create({ helpers });
 
+// Browser redirects
 app.use(function forceLiveDomain(req, res, next) {
-  if (req.get('Host').includes("herokuapp")) {
+  // If request has a domain for the Heroku deployment or starts with "www.", redirect to base domain
+  if (req.get('Host').includes("herokuapp") || req.get('Host').includes("www.")) {
     return res.redirect(301, `https://stephentechblog.com${req.path}`);
   }
   return next();
