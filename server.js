@@ -12,8 +12,14 @@ const helpers = require('./utils/date');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Reads .env file
+require('dotenv').config();
+
+// Destructure secret string from .env file
+const { SECRET } = process.env;
+
 const sess = {
-  secret: 'siWItTzFHhVnfrIQyZeS',
+  secret: SECRET,
   cookie: {
       // 15 minutes in milliseconds
       maxAge: 900000
