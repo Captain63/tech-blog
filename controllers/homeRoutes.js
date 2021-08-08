@@ -33,6 +33,14 @@ router.get("/", async (req, res) => {
 
 // Show blog post with corresponding ID
 router.get("/post/:id", async (req, res) => {
+    // IDs should only be numbers, so stop execution for requested URLs that don't match data type
+    if (!/^[0-9]+$/.test(req.params.id)) {
+        res.status(400).json("Error: Improper URL");
+
+        // Stop further execution
+        return;
+    }
+
     try {
         const postData = await Post.findByPk(req.params.id, {
             // Join with User and Comment models
@@ -96,13 +104,21 @@ router.get("/dashboard/new-post", withAuth, (req, res) => {
             // Flag for front-end code to show "Post" button underneath form
             existingPost: false
         });
-    } catch {
+    } catch (err) {
         res.status(500).json(err);
     }
 })
 
 // Show blog post updating/deleting page
 router.get("/dashboard/edit/:id", withAuth, async (req, res) => {
+    // IDs should only be numbers, so stop execution for requested URLs that don't match data type
+    if (!/^[0-9]+$/.test(req.params.id)) {
+        res.status(400).json("Error: Improper URL");
+
+        // Stop further execution
+        return;
+    }
+
     try {
         const postData = await Post.findByPk(req.params.id);
 
