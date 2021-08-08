@@ -24,6 +24,7 @@
             </form>
             <div class="d-flex flex-column align-items-center">
                 {{#if existingPost}}
+                {{!-- Because validate isn't called until the form is changed, Update Post is initially disabled until the user interacts with the input fields, at which point both tests pass. Prevents user from submitting update request without changing any content. --}}
                 <button class="btn btn-secondary w-50 submit-button" id="update" disabled>Update Post</button>
                 <button class="btn btn-danger w-50 my-3" id="delete">Delete Post</button>
                 {{else}}
