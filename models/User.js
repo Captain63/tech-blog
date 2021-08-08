@@ -19,20 +19,21 @@ User.init(
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             validate: {
-            isEmail: true,
-            },
+                isEmail: true,
+            }
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-            len: [8]
+                len: [8]
             }
         }
     },
