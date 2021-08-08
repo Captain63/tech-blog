@@ -10,6 +10,7 @@ const validate = () => {
     textAreas.length > 0 ? 
         // Combine textareas and regular inputs into one array
         inputArray = [...inputFields, ...textAreas]:
+        // Or proceed with input fields only
         inputArray = [...inputFields];
     
     // Filter out inputs/textareas that have content
@@ -21,7 +22,5 @@ const validate = () => {
         // Otherwise, keep disabled. Also allows function to reflexively disable button if field has content deleted
         submitButton.setAttribute("disabled", "");
 }
-
-
 
 form.addEventListener("input", validate);

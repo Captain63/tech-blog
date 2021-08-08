@@ -13,7 +13,10 @@ const logUserIn = async (event) => {
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard');
+        // Wait 0.5 seconds for session cookie to update so that user is now flagged as logged in before redirecting
+        setTimeout(() => {
+            document.location.replace('/dashboard');
+        }, 500);
     } else {
         alert("Email or password not recognized. Please try again.")
     }
