@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-       <title>Steve's Tech Blog</title>
+        <title>Steve's Tech Blog</title>
 
         <!-- Sets consistent scaling across devices -->
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Open Graph tags -->
+        <meta name="title" property="og:title" content="Steve's Tech Blog">
+        <meta name="description" property="og:description" content="Blog site for discussing latest tech innovations and updates.">
 
         <!-- Favicon -->
-       <link rel="icon" type="image/png" sizes="96x96" href="/images/desktop-favicon.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/images/desktop-favicon.png">
 
-       <!-- Normalize CSS link -->
-       <link rel="stylesheet" href="/css/normalize.css">
+        <!-- Normalize CSS link -->
+        <link rel="preload" href="/css/normalize.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="/css/normalize.css">
+        </noscript>
 
-       <!-- Bootstrap CDN link -->
-       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <!-- Bootstrap CDN link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-       <!-- Custom CSS link -->
-       <link rel="stylesheet" href="/css/style.css">
+        <!-- Custom CSS link -->
+        <link rel="stylesheet" href="/css/style.css">
 
         <!-- Font Awesome link -->
-        <script src="https://kit.fontawesome.com/3aa713bd16.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/3aa713bd16.js" crossorigin="anonymous" defer></script>
     </head>
     <body>
         <!-- Top navigation and title -->
-        <div class="bg-info mb-4">
+        <div class="mb-4 teal">
             <header>
                 <h1 class="text-white w-100 px-4 pt-4"><i class="fas fa-desktop"></i> Steve's Tech Blog</h1>
             </header>
