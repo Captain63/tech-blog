@@ -11,6 +11,7 @@ const registerUser = async (event) => {
     const email = document.querySelector("#signupEmail").value.trim();
     const password = passwordField.value.trim();
 
+    // Do not submit until validate function has confirmed inputs meet requirements (extra layer in case disabled attribute on submit button is overridden)
     if (validate()) {
         const response = await fetch('/api/users/signup', {
             method: "POST",
@@ -81,7 +82,8 @@ const validate = () => {
     }
 }
 
-passwordField.addEventListener("input", checkLength);
-verifyField.addEventListener("input", verifyPassword);
 signupForm.addEventListener("input", validate);
 signupForm.addEventListener("submit", registerUser);
+
+// Call validate function on page load
+validate();
