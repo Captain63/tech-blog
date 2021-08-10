@@ -30,6 +30,9 @@
 
         <!-- Font Awesome link -->
         <script src="https://kit.fontawesome.com/3aa713bd16.js" crossorigin="anonymous" defer></script>
+
+        <!-- Link manifest -->
+        <link rel="manifest" href="/manifest.webmanifest">
     </head>
     <body>
         <!-- Top navigation and title -->
@@ -62,5 +65,15 @@
         <footer class="bg-dark p-2 mt-5">
             <h4 class="text-white text-center">&copy; 2021 Stephen A. Roddewig</h4>
         </footer>
+
+        <script>
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker.register("../../service-worker.js").then(reg => {
+                    console.log("Serviceworker file registered", reg);
+                    });
+                });
+            }
+        </script>
     </body>
 </html>
