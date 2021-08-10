@@ -10,18 +10,20 @@
 - [Screenshots](#screenshots)
 
 ## Project Overview
-Blog content management system for hosting posts and comments from logged in users. Applicaiton follows the MVC paradigm and is built using Node.js libraries Express, Sequelize and Handlebars. All data for the site is hosted in MySQL database on Heroku, including authentication for creating accounts and signing in users to ensure that only those with an assigned username and credentials can add posts or comments. User is also able to update and delete their existing posts.
+Blog content management system for users to write blog posts and post comments. Applicaiton follows the MVC paradigm and is built using Handlebars and Bootstrap for the front end, Node.js and Express for the server and API, Sequelize as the ODM, and MySQL for the database. All data is hosted in MySQL database on Heroku, including authentication for creating accounts and signing in users to ensure that only those with an assigned username and credentials can add posts or comments. User is able to update and delete their existing posts.
 
-[View the live application](https://captain63-tech-blog.herokuapp.com/) in Heroku.
+Tech Blog is a progressive web application so the user can install the app on their local machine.
+
+[View the live application](https://stephentechblog.com/) in Heroku.
 
 ### Languages Used
 - JavaScript (Node.js)
-- SQL (mySQL)
-- HTML (handlebars.js)
-- CSS
+- SQL (MySQL)
+- HTML (Handlebars.js)
+- CSS (Bootstrap & custom CSS)
 
 ### Node Libraries Used
-- [mySQL](https://www.npmjs.com/package/mysql)
+- [MySQL](https://www.npmjs.com/package/mysql)
 - [Sequelize](https://www.npmjs.com/package/sequelize)
 - [Express](https://www.npmjs.com/package/express)
 - [Express Handlebars](https://www.npmjs.com/package/express-handlebars)
