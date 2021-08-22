@@ -1,3 +1,18 @@
+{{!-- Search Bar --}}
+{{#if posts}}
+    <div class="row px-2 px-sm-5 justify-content-center">
+        <div class="col-12 col-md-10 w-50">
+            <div class="float-left float-md-right mt-2 mt-md-0" id="search">
+                <h5 class="text-md-right">Search Posts</h5>
+                <input id="search-bar" class="rounded text-left text-md-right pl-2 pl-md-0 pr-1" />
+                <i class="fas fa-search float-left float-md-right"></i>
+            </div>
+        </div>
+    </div>
+{{/if}}
+
 {{#each posts as |post|}}
 {{> post-summaries}}
 {{/each}}
+
+<script src="./js/dist/search.min.js"></script>
