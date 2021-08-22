@@ -6,6 +6,7 @@ const FILES_TO_CACHE = [
     '/js/dist/login.min.js',
     '/js/dist/logout.min.js',
     '/js/dist/post.min.js',
+    '/js/dist/search.min.js',
     '/js/dist/signup.min.js',
     '/js/dist/validate.min.js',
     '/images/desktop-favicon.png',
