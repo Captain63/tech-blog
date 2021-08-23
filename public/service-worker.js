@@ -49,7 +49,10 @@ self.addEventListener("activate", event => {
     );
 });
 
-self.addEventListener("fetch", event => {  
+self.addEventListener("fetch", event => {
+    // Fixes bug when auditing in DevTools Lighthouss
+    if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') return;
+
     // use cache first for all other requests for performance
     event.respondWith(
       caches.match(event.request).then(cachedResponse => {
