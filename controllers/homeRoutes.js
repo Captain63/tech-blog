@@ -156,4 +156,9 @@ router.get("/signup", (req, res) => {
     res.render('signup');
 })
 
+// Serves 404 page for any routes not defined
+router.get("*", function(req, res){
+    res.status(404).render("404");
+});
+
 module.exports = router;
