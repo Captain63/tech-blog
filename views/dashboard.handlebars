@@ -5,11 +5,11 @@
     {{!-- Search Bar --}}
     <div class="col-12 col-md-5 w-50">
         {{#if posts}}
-        <div class="float-left float-md-right mt-2 mt-md-0" id="search">
-            <h5 class="text-md-right">Search Your Posts</h5>
-            <input id="search-bar" class="rounded text-left text-md-right pl-2 pl-md-0 pr-1" />
-            <i class="fas fa-search float-left float-md-right"></i>
-        </div>
+            <div class="float-left float-md-right mt-2 mt-md-0" id="search">
+                <label for="search-bar" class="d-block text-md-right">Search Your Posts</label>
+                <input id="search-bar" class="rounded text-left text-md-right pl-2 pl-md-0 pr-1" />
+                <i class="fas fa-search float-left float-md-right"></i>
+            </div>
         {{/if}}
     </div>
 </div>
@@ -24,4 +24,7 @@
     </div>
 </div>
 
-<script src="./js/dist/search.min.js"></script>
+{{!-- If there are no posts to search, then the script file is not needed --}}
+{{#if posts}}
+    <script src="./js/dist/search.min.js"></script>
+{{/if}}
