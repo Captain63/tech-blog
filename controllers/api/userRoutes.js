@@ -129,11 +129,11 @@ router.post('/logout', (req, res) => {
 })
 
 // Query to check if user is signed in before showing comment fields
-router.get("/signed-in", (req, res) => {
+router.post('/signed-in', (req, res) => {
   if (req.session.loggedIn) {
       res.status(200).json("Success");
   } else {
-      res.status(404).json("Failure");
+      res.status(500).json("Failure");
   }
 })
 
