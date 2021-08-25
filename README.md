@@ -1,4 +1,4 @@
-# Steve's Tech Blog
+# Stephen's Tech Blog
 
 ![MIT license badge](./screenshots/mit-license.svg)
 
@@ -53,19 +53,19 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 ## Screenshots
 
 ### Feed (homepage)
-![Homepage view with posts](./screenshots/homepage.png)
+![Homepage view with posts](./screenshots/feed.png)
 
 ### Feed on desktop app
-![Homepage view on desktop app]()
+![Homepage view on desktop app](./screenshots/desktop.png)
 
 ### Live Post view with comments
-![Post view for adding comment](./screenshots/comments.png)
+![Post view for adding comment](./screenshots/live-post.png)
 
 ### Dashboard view
-![Dashboard view for managing posts](./screenshots/new-post.png)
+![Dashboard view for managing posts](./screenshots/dashboard.png)
 
 ### New Post view
-![Dashboard view for drafting new post](./screenshots/edit-delete-post.png)
+![Dashboard view for drafting new post](./screenshots/new-post.png)
 
 ### Update Post view
-![Dashboard view for updating/deleting post]()
+![Dashboard view for updating/deleting post](./screenshots/edit-post.png)
